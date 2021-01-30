@@ -1,27 +1,28 @@
 #importing math library for square root function
 from math import *
 
-def PrintTriangles(n):
+def printTriangle(n):
     #Returns Void
     '''Logic :
        Each row will have previousrow +2 stars,so we assume (2*n-1) grids and fill in the stars and spaces
     '''
     '''Outer loop  iterates through the number of rows'''
     try:
+
         for i in range(0,n+1):
             '''Inner loops is responsible for printing before spaces and stars'''
-            for j in range(0,(((2*n)-1)/2)-i):
+            for j in range(0,int(((2*n)-1)/2)-i):
                 print(" ",end="")
-                for j in range((2*i)+1):
+            for j in range((2*i)+1):
                     print("*",end="")
-                print("\n")
-    except Exception :
-        print("Unkniown Error")
+            print("\n")
+    except Exception as e :
+        print("Unkniown Error",e)
 
 
 
 
-def PrintPellSeries(n):
+def printPellSeries(n):
     #Returns Void
     ''' Logic:
     we initialize 2 varaibles a=0 and b=1 and follow the logoic c=2*b+a and swap accordingly
@@ -29,8 +30,9 @@ def PrintPellSeries(n):
     try:
         a=0
         b=1
+        print(0,1,end=" ")
         #outer
-        for x in range(n+1):
+        for x in range(n):
             c=(2*b)+a
             print(c,end=" ")
             a=b
@@ -38,7 +40,7 @@ def PrintPellSeries(n):
     except Exception :
         print("Unknown error")
 
-def SquareSums(n):
+def squareSums(n):
     #returns boolean value
     ''' Logic:
     Given N we start our search from 1 to Square root(N) and check if there are any two squares that
@@ -57,7 +59,7 @@ def SquareSums(n):
     except Exception:
         print("unknwon Exception")
 
-def DiffPairs(nums,K):
+def diffPairs(nums,K):
     #Returns INT I.e NUmber of pairs
     ''' Logic
     we store the numbers in the dictionary(hasmap with frequency).
@@ -160,17 +162,21 @@ if __name__ == "__main__":
     try:
         #Question 1
         print("Q1 : Enter the number of rows for the traingle:")
-        printTriangle(int(input()))
+        n=int(input())
+        print("sdfnskdjafnksafkj")
+        printTriangle(n)
         print("\n\n\n")
 
         #Question 2
         print("Q2 : Enter the number of terms in the Pell Series:")
-        printPellSeries(int(input()))
+        n=int(input())
+        printPellSeries(n)
         print("\n\n\n")
 
         #Question 3
         print("Q3 : Enter the number to check if squareSums exist:")
-        falg=squareSums(int(input()))
+        n=int(input())
+        flag=squareSums(n)
         if flag:
             print("Yes, the number can be expressed as a sum of squares of 2 integers")
         else:
@@ -182,3 +188,20 @@ if __name__ == "__main__":
         k=int(input())
         x=diffPairs(a,k)
         print("There exists {0} pairs with the given difference".format(x))
+        print("\n\n\n")
+
+        #Question 5
+        emails=["dis.email + bull@usf.com","dis.e.mail+bob.cathy@usf.com","disemail+david@us.f.com"]
+        n=UniqueEmails(emails)
+        print("Q 5 The number of unique emails is:",n)
+        print("\n\n\n")
+
+
+        #Question 6
+        paths=[["London", "New York" ],["New York", "Tampa" ],["Delhi", "London" ]]
+        city=DestCity(paths)
+        print("Q6 Destination city is ",destination)
+        print("\n\n\n")
+
+    except Exception:
+        print("Exception handeled")
