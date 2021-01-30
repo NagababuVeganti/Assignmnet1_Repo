@@ -156,4 +156,29 @@ def DestCity(cities):
         print("Unknwon Exception")
 #print(DiffPairs([1, 2, 3, 4, 5],1))
 
-print(UniqueEmails(["dis.email+bull@usf.com","dis.e.mail+bob.cathy@usf.com","disemail+david@us.f.com"]))
+if __name__ == "__main__":
+    try:
+        #Question 1
+        print("Q1 : Enter the number of rows for the traingle:")
+        printTriangle(int(input()))
+        print("\n\n\n")
+
+        #Question 2
+        print("Q2 : Enter the number of terms in the Pell Series:")
+        printPellSeries(int(input()))
+        print("\n\n\n")
+
+        #Question 3
+        print("Q3 : Enter the number to check if squareSums exist:")
+        falg=squareSums(int(input()))
+        if flag:
+            print("Yes, the number can be expressed as a sum of squares of 2 integers")
+        else:
+            print("No, the number cannot be expressed as a sum of squares of 2 integers")
+
+        #Question 4
+        a=[ 3, 1, 4, 1, 5 ]
+        print("Q4: Enter the absolute difference to check:")
+        k=int(input())
+        x=diffPairs(a,k)
+        print("There exists {0} pairs with the given difference".format(x))
