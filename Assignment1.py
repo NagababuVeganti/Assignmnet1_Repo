@@ -8,7 +8,7 @@ def printTriangle(n):
     '''Outer loop  iterates through the number of rows'''
     try:
 
-        for i in range(0,n+1):
+        for i in range(0,n):
             '''Inner loops is responsible for printing before spaces and stars'''
             for j in range(0,int(((2*n)-1)/2)-i):
                 print(" ",end="")
@@ -200,7 +200,7 @@ if __name__ == "__main__":
 
 
         #Question 6
-        paths=[["London", "New York" ],["New York", "Tampa" ],["Delhi", "London" ]]
+        paths=[["B","C"],["D","B"],["C","A"]]
         city=DestCity(paths)
         print("Q6 Destination city is ",city)
         print("\n\n\n")
