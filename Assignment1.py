@@ -1,10 +1,9 @@
 #importing math library for square root function
 from math import *
-
 def printTriangle(n):
     #Returns Void
     '''Logic :
-       Each row will have previousrow +2 stars,so we assume (2*n-1) grids and fill in the stars and spaces
+       Each row will have previousrow +2 stars,so we assume (2*n-1) grids and fill in the stars and spaces accordingly
     '''
     '''Outer loop  iterates through the number of rows'''
     try:
@@ -89,7 +88,7 @@ def diffPairs(nums,K):
             else:
                         if (numbers_dic.get(temp)!=None):
                             pairs.add((i,temp))
-        print(pairs)
+        #print(pairs)
         return len(pairs)
     except Exception as e:
         print("unkown Exception occured",e)
@@ -119,19 +118,21 @@ def UniqueEmails(emails):
             if j=='+':
                 ignore=True
                 continue
-            elif j=='.':
+            elif j=='.' or j==' ':
                 continue
             else:
                 temp+=j
 
     #print(preprocessedEmails)
-    for i in range(len(emails)):
-        temp=0
-        for j in range(i,len(emails)):
-            if preprocessedEmails[i]==preprocessedEmails[j]:
-                temp+=1
-        count=max(temp,count)
-    return count
+    final_Count={}
+    count=0 #Counter that counts unique emails
+    for i in preprocessedEmails:
+        if final_Count.get(i)==None:
+            final_Count[i]=1
+        else:
+            final_Count[i]+=1
+    #print(final_Count)
+    return len(final_Count.keys())
 
 
 
@@ -144,13 +145,13 @@ def DestCity(cities):
     try:
         data={}
         for i in cities:
-            print(i)
+            #print(i)
             if data.get(i[0])==None:
                 data[i[0]]=[i[1]]
-            else:
-                data[i[0]].append(i[1])
-                if data.get(i[1])==None:
-                    data[i[1]]=[]
+            if data.get(i[1])==None:
+                data[i[1]]=[]
+            data[i[0]].append(i[1])
+            #print(data)
         for i in data.keys():
             if len(data[i])==0:
                 return i
@@ -183,7 +184,7 @@ if __name__ == "__main__":
         print("\n\n\n")
 
         #Question 4
-        a=[ 3, 1, 4, 1, 5 ]
+        a=[2,2,2,3,5 ]
         print("Q4: Enter the absolute difference to check:")
         k=int(input())
         x=diffPairs(a,k)
@@ -200,8 +201,16 @@ if __name__ == "__main__":
         #Question 6
         paths=[["London", "New York" ],["New York", "Tampa" ],["Delhi", "London" ]]
         city=DestCity(paths)
-        print("Q6 Destination city is ",destination)
+        print("Q6 Destination city is ",city)
         print("\n\n\n")
 
     except Exception as e:
         print("Exception occured in the main",e)
+
+#Self Reflection Comments
+'''
+I got to know on  how to use GIT HUB
+
+I learned about LISTS and dictionaries
+
+'''
