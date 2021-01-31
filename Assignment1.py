@@ -139,6 +139,7 @@ def UniqueEmails(emails):
 def DestCity(cities):
     #returns City
     '''Logic:
+    Assume cities as a graph.
     Since there is are no cycles in the graph the destination city wont be having any out going edges
     so after storing edges in the dictionary the city with no out going edges will be destination city.
     '''
@@ -184,7 +185,7 @@ if __name__ == "__main__":
         print("\n\n\n")
 
         #Question 4
-        a=[2,2,2,3,5 ]
+        a=[1, 2, 3, 4, 5]
         print("Q4: Enter the absolute difference to check:")
         k=int(input())
         x=diffPairs(a,k)
