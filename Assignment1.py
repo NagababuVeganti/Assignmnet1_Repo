@@ -59,7 +59,7 @@ def squareSums(n):
         print("unknwon Exception",e)
 
 def diffPairs(nums,K):
-    #Returns INT I.e NUmber of pairs
+    #Returns INT (I.e NUmber of pairs with given difference
     ''' Logic
     we store the numbers in the dictionary(hasmap with frequency).
     frequency of number is used in the case where K=0
