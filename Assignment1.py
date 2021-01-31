@@ -37,8 +37,8 @@ def printPellSeries(n):
             print(c,end=" ")
             a=b
             b=c
-    except Exception :
-        print("Unknown error")
+    except Exception as e:
+        print("Unknown error",e)
 
 def squareSums(n):
     #returns boolean value
@@ -56,8 +56,8 @@ def squareSums(n):
                         ''' when the sum exceeds we break the loop as we know we already crossed it'''
                         break
         return False
-    except Exception:
-        print("unknwon Exception")
+    except Exception as e:
+        print("unknwon Exception",e)
 
 def diffPairs(nums,K):
     #Returns INT I.e NUmber of pairs
@@ -91,8 +91,8 @@ def diffPairs(nums,K):
                             pairs.add((i,temp))
         print(pairs)
         return len(pairs)
-    except Exception:
-        print("unkown Exception")
+    except Exception as e:
+        print("unkown Exception occured",e)
 
 
 def UniqueEmails(emails):
@@ -154,8 +154,8 @@ def DestCity(cities):
         for i in data.keys():
             if len(data[i])==0:
                 return i
-    except Exception:
-        print("Unknwon Exception")
+    except Exception as e:
+        print("Unknwon Exception occured",e)
 #print(DiffPairs([1, 2, 3, 4, 5],1))
 
 if __name__ == "__main__":
@@ -163,7 +163,6 @@ if __name__ == "__main__":
         #Question 1
         print("Q1 : Enter the number of rows for the traingle:")
         n=int(input())
-        print("sdfnskdjafnksafkj")
         printTriangle(n)
         print("\n\n\n")
 
@@ -181,6 +180,7 @@ if __name__ == "__main__":
             print("Yes, the number can be expressed as a sum of squares of 2 integers")
         else:
             print("No, the number cannot be expressed as a sum of squares of 2 integers")
+        print("\n\n\n")
 
         #Question 4
         a=[ 3, 1, 4, 1, 5 ]
@@ -203,5 +203,5 @@ if __name__ == "__main__":
         print("Q6 Destination city is ",destination)
         print("\n\n\n")
 
-    except Exception:
-        print("Exception handeled")
+    except Exception as e:
+        print("Exception occured in the main",e)
